@@ -3,8 +3,8 @@
 describe("Check gmail for email", async function () {
   it("Email is delievered", function () {
     const from = "balachsubra@gmail.com"
-    const incoming_mailbox = `poketriohq@gmail.com`;
-    const subject = "";
+    const incoming_mailbox = `outertestheaven@gmail.com`;
+    const subject = "hello?";
 
     cy.task("gmail:get-messages", {
       options: {
@@ -19,8 +19,7 @@ describe("Check gmail for email", async function () {
         1,
         "Expected to find at least one email, but none were found!"
       );
-      expect(email[0].subject).to.equal("Hey Yo Shabz!");
-      expect(email[0].subject).to.equal("I've been automated Hassan!");
+      expect(email[0].subject).to.equal("hello?");
 
     });
   });
