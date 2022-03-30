@@ -5,4 +5,9 @@ workflows:
   build:
     jobs:
       - cypress/run:
-          install-command: npm ci 
+          install-command: npm ci
+        run:
+          environment:
+          CYPRESS_credentials: ${{credentials}}
+          CYPRESS_gmail_token: ${{gmail_token}}
+       
