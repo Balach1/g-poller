@@ -28,7 +28,7 @@ jobs:
           pkg-manager: npm
       - run:
           name: Run Cypress tests
-          command: npx run cy:run
+          command: npm run cy:run
 
 workflows:
   # Below is the definition of your workflow.
