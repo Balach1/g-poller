@@ -25,8 +25,8 @@ module.exports = (on) => {
   on("task", {
     "gmail:get-messages": async args => {
       const messages = await gmail_tester.get_messages(
-        path.resolve(__dirname, "credentials.json") || path.resolve(Cypress.env('credentials')),
-        path.resolve(__dirname, "gmail_token.json") || path.resolve(Cypress.env('gmail_token')),
+        path.resolve(__dirname, "credentials.json") || Cypress.env('credentials'),
+        path.resolve(__dirname, "gmail_token.json") || Cypress.env('gmail_token'),
         args.options
       );
       return messages;
