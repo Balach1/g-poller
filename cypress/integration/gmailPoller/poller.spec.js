@@ -20,6 +20,8 @@ describe("Check gmail for email", async function () {
         "Expected to find at least one email, but none were found!"
       );
       expect(email[0].subject).to.equal("Hey Yo Shabz!");
+      expect(email[0].subject).to.equal("I've been automated Hassan!");
+
     });
   });
 });
