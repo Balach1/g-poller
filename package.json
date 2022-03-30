@@ -4,5 +4,8 @@
   },
   "devDependencies": {
     "gmail-tester": "^1.3.4"
+  },
+  "scripts": {
+    "cy:run": "cypress run"
   }
 }
