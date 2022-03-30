@@ -14,5 +14,4 @@ jobs:
 workflows:
   sample:
     jobs:
-      - build-and-test
       - cypress/run
