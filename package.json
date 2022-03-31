@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "cypress": "^9.5.3",
+    "dotenv": "^16.0.0",
     "xvfb": "^0.4.0"
   },
   "devDependencies": {
