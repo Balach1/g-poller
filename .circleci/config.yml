@@ -11,5 +11,5 @@ workflows:
             CYPRESS_GMAIL_CREDENTIALS: ${{CYPRESS_GMAIL_CREDENTIALS}}
             CYPRESS_GMAIL_TOKEN: ${{CYPRESS_GMAIL_TOKEN}}
           command: |
-            echo $CYPRESS_GMAIL_CREDENTIALS > CREDENTIALS.json
-            echo $CYPRESS_GMAIL_TOKEN > TOKEN.json
+            echo $CYPRESS_GMAIL_CREDENTIALS > credentials.json
+            echo $CYPRESS_GMAIL_TOKEN > gmail_token.json

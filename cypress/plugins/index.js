@@ -30,26 +30,12 @@ module.exports = (on, config) => {
   // `config` is the resolved Cypress config
   on("task", {
     "gmail:get-messages": async (args) => {
-      config.env = config.env || {};
-      // you could extract only specific variables
-      // and rename them if necessary
-      let con = config.env.credentials;
-      con = process.env.credentials;
-      let con2 = config.env.gmail_token;
-      con2 = process.env.gmail_token;
-      
       const messages = await gmail_tester.get_messages(
         path.resolve(__dirname, "../../", "credentials.json"),
         path.resolve(__dirname, "../../", "gmail_token.json"),
-        // path.resolve(Cypress.env("credentials")),
-        // path.resolve(Cypress.env("gmail_token")),
         args.options
       );
-
-      console.log("------------", con);
-      console.log("------------", con2);
       return messages;
     },
   });
-  return config;
 };
