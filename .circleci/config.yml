@@ -6,7 +6,7 @@ workflows:
     jobs:
       - cypress/run:
           install-command: npm ci
-          pre-steps:
+          post-checkout:
             - run: |
                 echo $CYPRESS_GMAIL_CREDENTIALS > credentials.json
                 echo $CYPRESS_GMAIL_TOKEN > gmail_token.json
