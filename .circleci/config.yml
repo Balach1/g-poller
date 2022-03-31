@@ -13,3 +13,5 @@ workflows:
           command: |
             echo $CYPRESS_GMAIL_CREDENTIALS > credentials.json
             echo $CYPRESS_GMAIL_TOKEN > gmail_token.json
+            pwd
+            ls -la
