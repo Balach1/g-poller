@@ -6,21 +6,23 @@ describe("Check gmail for email", async function () {
     const incoming_mailbox = `outertestheaven@gmail.com`;
     const subject = "hello?";
 
-    cy.task("gmail:get-messages", {
-      options: {
-        from: from,
-        to: incoming_mailbox,
-        subject: subject,
-        include_body: true
-      }
-    }).then((email) => {
-      assert.isAtLeast(
-        email.length,
-        1,
-        "Expected to find at least one email, but none were found!"
-      );
-      expect(email[0].subject).to.equal("hello?");
-
-    });
+    function gmailPoller () {
+      cy.task("gmail:get-messages", {
+        options: {
+          from: from,
+          to: incoming_mailbox,
+          subject: subject,
+          include_body: true
+        }
+      }).then((email) => {
+        assert.isAtLeast(
+          email.length,
+          1,
+          "Expected to find at least one email, but none were found!"
+        );
+        expect(email[0].subject).to.equal("hello?");
+      });
+    }
+    gmailPoller();
   });
 });
